@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     fun sum1(a: Int, b: Int) = a + b
 
     fun printSum(a: Int, b: Int): Unit {
-        print(a + b);
+        print(a + b)
     }
 
 }
