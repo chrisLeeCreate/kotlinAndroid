@@ -1,15 +1,11 @@
-package cn.boxfish.stu.kotlinandroid
+package cn.boxfish.stu.kotlinandroid.类和继承
 
-import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.util.Log
+class MainActivity : android.support.v7.app.AppCompatActivity() {
 
-class MainActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: android.os.Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_main)
+        setContentView(cn.boxfish.stu.kotlinandroid.R.layout.activity_main)
         fujiuhong()
     }
 
@@ -17,11 +13,12 @@ class MainActivity : AppCompatActivity() {
         var x = 1
         var info: String = "info"
         var XA: Int = 1;
-        Log.e("sa", "ds")
+        android.util.Log.e("sa", "ds")
         val sum = sum(x, XA)
         print(sum)
         print(sum1(x, XA))
-        printSum(x,XA)
+        printSum(x, XA)
+        val person = cn.boxfish.stu.kotlinandroid.Person("lishaowei")
     }
 
     fun sum(a: Int, b: Int): Int {
