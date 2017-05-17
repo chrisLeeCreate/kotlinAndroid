@@ -1,4 +1,4 @@
-package cn.boxfish.stu.kotlinandroid
+package cn.boxfish.stu.kotlinandroid.类和继承
 
 /**
  * Created by lishaowei on 2017/5/16.
@@ -16,5 +16,6 @@ open class Base {
             print(arg)
         }
     }
+    open fun lishaowei(){}
 
 }

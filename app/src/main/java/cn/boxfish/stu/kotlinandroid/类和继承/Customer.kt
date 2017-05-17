@@ -1,4 +1,4 @@
-package cn.boxfish.stu.kotlinandroid
+package cn.boxfish.stu.kotlinandroid.类和继承
 
 /**
  * Created by lishaowei on 2017/5/16.
@@ -18,4 +18,12 @@ data class Customer(var name: String, val email: String) {
     }
 
     fun foo(a: Int = 0, b: String = "") {}
+
+    init {
+
+    }
+
+    var customerKey = name.toUpperCase()
+
+
 }
