@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity() {
         val sum = sum(x, XA)
         print(sum)
         print(sum1(x, XA))
-        printSum(x,XA)
+        printSum(x, XA)
+        val person = Person("lishaowei")
     }
 
     fun sum(a: Int, b: Int): Int {
