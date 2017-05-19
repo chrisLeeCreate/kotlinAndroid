@@ -6,12 +6,12 @@ ext {
     buildToolsVersion = '24.1.0'
 
     supportLibVersion = "25.0.0"
-    retrofitLibVersion = "2.1.0"
+    retrofitLibVersion = "2.0.0"
     okhttpLibVersion = "3.4.2"
     daggerLibVersion = "2.7"
-    rxjavaLibVersion = "2.0.0"
+    rxjavaLibVersion = "1.2.0"
     rxjava2LibVersion = "2.0.0-RC2"
-    rxAndroidVersion = "2.0.1"
+    rxAndroidVersion = "1.2.1"
     gsonLibVersion = "2.6.2"
     rxBindingVersion = "0.4.0"
     superRecyclerViewVersion = "1.1.4"
@@ -26,15 +26,14 @@ ext {
             javaxAnnotation         : 'org.glassfish:javax.annotation:10.0-b28',
 
             // Rx
-            rxJava                  : "io.reactivex.rxjava2:rxjava:$rxjavaLibVersion",
-            rxAndroid               : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            rxJava                  : "io.reactivex:rxjava:$rxjavaLibVersion",
+            rxAndroid               : "io.reactivex:rxandroid:$rxAndroidVersion",
             // json
             gson                    : "com.google.code.gson:gson:$gsonLibVersion",
             // Http
             retrofit                : "com.squareup.retrofit2:retrofit:$retrofitLibVersion",
             retrofitGsonConverter   : "com.squareup.retrofit2:converter-gson:$retrofitLibVersion",
             retrofitRxjavaAdapter   : "com.squareup.retrofit2:adapter-rxjava:$retrofitLibVersion",
-            retrofitRxjava2Adapter  : 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0-RC2',
             okhttp3                 : "com.squareup.okhttp3:okhttp:$okhttpLibVersion",
             okhttp3_ws              : "com.squareup.okhttp3:okhttp-ws:$okhttpLibVersion",
             okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttpLibVersion",
@@ -53,11 +52,12 @@ ext {
 
             kotlinStdlib            : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
             kotlinReflect           : "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion",
-            RxBinding2              : "com.jakewharton.rxbinding2:rxbinding:2.0.0",
+//            RxBinding2              : "com.jakewharton.rxbinding2:rxbinding:2.0.0",
 //            RxBinding2Supportv4     : "com.jakewharton.rxbinding2:rxbinding-support-v4:2.0.0",
 //            RxBinding2Appcompatv7   : "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0",
 //            RxBinding2Design        : "com.jakewharton.rxbinding2:rxbinding-design:2.0.0",
 //            RxBinding2RecyclerviewV7: "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0",
 //            RxBinding2leanbackv17   : "com.jakewharton.rxbinding2:rxbinding-leanback-v17:2.0.0"
+
     ]
 }

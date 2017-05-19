@@ -32,14 +32,21 @@ dependencies {
     def dependencies = rootProject.ext.dependencies
     compile dependencies.rxJava
     compile dependencies.rxAndroid
-    compile('com.jakewharton.rxbinding2:rxbinding:2.0.0') {
-        exclude group: 'com.android.support', module: 'support-annotations' //这个是what
+    compile 'com.jakewharton.rxbinding:rxbinding-support-v4:0.4.0'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    compile('com.jakewharton.rxbinding:rxbinding-recyclerview-v7:0.4.0') {
+        exclude module: 'com.android.support:recyclerview-v7'
     }
-    //    compile dependencies.RxBinding2Supportv4
-    //    compile dependencies.RxBinding2Appcompatv7
-    //    compile dependencies.RxBinding2Design
-    //    compile dependencies.RxBinding2RecyclerviewV7
-    //    compile dependencies.RxBinding2RecyclerviewV7
+//    compile('com.jakewharton.rxbinding2:rxbinding:2.0.0') {
+//        exclude group: 'com.android.support', module: 'support-annotations' //这个是what
+//    }
+
+
+    compile dependencies.retrofit
+    compile dependencies.retrofitRxjavaAdapter
+    compile dependencies.retrofitGsonConverter
+
+
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     testCompile 'junit:junit:4.12'
