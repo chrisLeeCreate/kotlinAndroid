@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '25.0.3'
     defaultConfig {
         applicationId "cn.boxfish.stu.kotlinandroid"
         minSdkVersion 19
@@ -24,7 +24,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -32,10 +32,15 @@ dependencies {
     def dependencies = rootProject.ext.dependencies
     compile dependencies.rxJava
     compile dependencies.rxAndroid
+    compile('com.jakewharton.rxbinding2:rxbinding:2.0.0') {
+        exclude group: 'com.android.support', module: 'support-annotations' //这个是what
+    }
+    //    compile dependencies.RxBinding2Supportv4
+    //    compile dependencies.RxBinding2Appcompatv7
+    //    compile dependencies.RxBinding2Design
+    //    compile dependencies.RxBinding2RecyclerviewV7
+    //    compile dependencies.RxBinding2RecyclerviewV7
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     testCompile 'junit:junit:4.12'
-}
-repositories {
-    mavenCentral()
 }

@@ -1,6 +1,6 @@
 ext {
 
-    compileSdkVersion = 24
+    compileSdkVersion = 25
     minSdkVersion = 15
     targetSdkVersion = 22
     buildToolsVersion = '24.1.0'
@@ -9,9 +9,9 @@ ext {
     retrofitLibVersion = "2.1.0"
     okhttpLibVersion = "3.4.2"
     daggerLibVersion = "2.7"
-    rxjavaLibVersion = "1.2.0"
+    rxjavaLibVersion = "2.0.0"
     rxjava2LibVersion = "2.0.0-RC2"
-    rxAndroidVersion = "1.2.1"
+    rxAndroidVersion = "2.0.1"
     gsonLibVersion = "2.6.2"
     rxBindingVersion = "0.4.0"
     superRecyclerViewVersion = "1.1.4"
@@ -26,8 +26,8 @@ ext {
             javaxAnnotation         : 'org.glassfish:javax.annotation:10.0-b28',
 
             // Rx
-            rxJava                  : "io.reactivex:rxjava:$rxjavaLibVersion",
-            rxAndroid               : "io.reactivex:rxandroid:$rxAndroidVersion",
+            rxJava                  : "io.reactivex.rxjava2:rxjava:$rxjavaLibVersion",
+            rxAndroid               : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
             // json
             gson                    : "com.google.code.gson:gson:$gsonLibVersion",
             // Http
@@ -46,13 +46,18 @@ ext {
             supportDesign           : "com.android.support:design:$supportLibVersion",
             supportRecyclerview     : "com.android.support:recyclerview-v7:$supportLibVersion",
             supportGridlayout       : "com.android.support:gridlayout-v7:$supportLibVersion",
-            supportAnnotations      : "com.android.support:support-annotations:$supportLibVersion",
+//            supportAnnotations      : "com.android.support:support-annotations:$supportLibVersion",
             supportCardView         : "com.android.support:cardview-v7:$supportLibVersion",
             supportCustomTabs       : "com.android.support:customtabs:$supportLibVersion",
             supportMultidex         : 'com.android.support:multidex:1.0.1',
 
             kotlinStdlib            : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
             kotlinReflect           : "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion",
-
+            RxBinding2              : "com.jakewharton.rxbinding2:rxbinding:2.0.0",
+//            RxBinding2Supportv4     : "com.jakewharton.rxbinding2:rxbinding-support-v4:2.0.0",
+//            RxBinding2Appcompatv7   : "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0",
+//            RxBinding2Design        : "com.jakewharton.rxbinding2:rxbinding-design:2.0.0",
+//            RxBinding2RecyclerviewV7: "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0",
+//            RxBinding2leanbackv17   : "com.jakewharton.rxbinding2:rxbinding-leanback-v17:2.0.0"
     ]
 }
