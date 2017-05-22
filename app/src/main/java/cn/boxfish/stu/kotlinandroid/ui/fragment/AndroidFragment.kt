@@ -9,8 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import cn.boxfish.stu.kotlinandroid.adapter.AndroidAdapter
 import cn.boxfish.stu.kotlinandroid.R
+import cn.boxfish.stu.kotlinandroid.adapter.AndroidAdapter
 import cn.boxfish.stu.kotlinandroid.mvp.model.KongfuIntrator
 import cn.boxfish.stu.kotlinandroid.mvp.presenter.KongFuPresenter
 import cn.boxfish.stu.kotlinandroid.mvp.view.KongfuContract
@@ -31,9 +31,9 @@ class AndroidFragment : Fragment(), KongfuContract.View {
     }
 
     fun initView(view: View) {
-        mAdapter = AndroidAdapter(mLists, activity)
         val kongFuPresenter = KongFuPresenter(this, KongfuIntrator())
         kongFuPresenter.getData(page++, ANDROID)
+        mAdapter = AndroidAdapter(mLists, activity)
         val recycle = view.findViewById(R.id.rv_recycle) as RecyclerView
         recycle.adapter = mAdapter
         recycle.layoutManager = LinearLayoutManager(context)

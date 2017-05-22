@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:background="@color/c_666666"
+    tools:context="cn.boxfish.stu.kotlinandroid.ui.activity.MainActivity">
+
+    <ImageView
+        android:id="@+id/im_girl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="#ffffff"
+        android:scaleType="centerCrop" />
+
+</RelativeLayout>
