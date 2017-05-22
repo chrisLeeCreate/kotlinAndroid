@@ -48,6 +48,8 @@ dependencies {
     compile dependencies.okhttp3
     compile dependencies.okhttp3_ws
     compile dependencies.okhttpLoggingInterceptor
+    compile dependencies.supportDesign //BottomNavigationView
+    compile dependencies.glide
 
 
 

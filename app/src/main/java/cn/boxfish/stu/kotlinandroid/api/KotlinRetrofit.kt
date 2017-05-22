@@ -11,7 +11,7 @@ import rx.schedulers.Schedulers
 /**
  * Created by lishaowei on 2017/5/19.
  */
-fun getPingInstance(): Retrofit {
+fun getInternetInstance(): Retrofit {
     val httpLoggingInterceptor = HttpLoggingInterceptor()
     httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
     val client = OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build()

@@ -17,4 +17,21 @@ interface KotlinApi {
     @GET("data/Android/10/{page}")
     fun getData(@Path("page") path: String): Observable<JsonResult<List<FuckGoods>>>
 
+    /**
+     * Android所有数据
+     */
+    @GET("data/Android/10/{page}")
+    fun getAndroidData(@Path("page") page:Int):Observable<JsonResult<List<FuckGoods>>>
+
+    /**
+     * iOS所有数据
+     */
+    @GET("data/iOS/10/{page}")
+    fun getiOSData(@Path("page") page:Int):Observable<JsonResult<List<FuckGoods>>>
+
+    /**
+     * iOS所有数据
+     */
+    @GET("data/福利/10/{page}")
+    fun getGirlData(@Path("page") page:Int):Observable<JsonResult<List<FuckGoods>>>
 }

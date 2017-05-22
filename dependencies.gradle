@@ -39,6 +39,7 @@ ext {
             okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttpLibVersion",
 
             glide                   : 'com.github.bumptech.glide:glide:3.7.0',
+//            fresco                  : "com.facebook.fresco:fresco:0.8.1",
 
             // support
             supportAppCompat        : "com.android.support:appcompat-v7:$supportLibVersion",
