@@ -9,7 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import cn.boxfish.stu.kotlinandroid.AndroidAdapter
+import cn.boxfish.stu.kotlinandroid.adapter.AndroidAdapter
 import cn.boxfish.stu.kotlinandroid.R
 import cn.boxfish.stu.kotlinandroid.mvp.model.KongfuIntrator
 import cn.boxfish.stu.kotlinandroid.mvp.presenter.KongFuPresenter
