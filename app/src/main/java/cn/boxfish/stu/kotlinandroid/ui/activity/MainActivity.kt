@@ -1,5 +1,6 @@
 package cn.boxfish.stu.kotlinandroid.ui.activity
 
+import android.util.Log
 import android.widget.Toast
 import cn.boxfish.stu.kotlinandroid.R
 import cn.boxfish.stu.kotlinandroid.mvp.model.MainIntrator
@@ -27,15 +28,13 @@ class MainActivity : BaseActivity(), MainContract.View {
         clicks(bt_button).throttleFirst(1000, TimeUnit.MILLISECONDS).subscribe({
             val mainPresenter = MainPresenter(this, MainIntrator())
             mainPresenter.getData("1")
-            Toast.makeText(applicationContext, "houshishadiao", Toast.LENGTH_SHORT).show()
         })
     }
 
     override fun getDataSuccess(goods: FuckGoods) {
-        print(goods.toString())
-        print(goods.createdAt)
-        print(goods.url)
-        Toast.makeText(applicationContext, "houshishadiao", Toast.LENGTH_SHORT).show()
+        etUsername.text = goods.desc
+        bt_button.text = goods.source
+        Log.d("li", goods.toString())
     }
 
 }

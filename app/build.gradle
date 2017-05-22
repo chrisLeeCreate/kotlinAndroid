@@ -45,6 +45,10 @@ dependencies {
     compile dependencies.retrofit
     compile dependencies.retrofitRxjavaAdapter
     compile dependencies.retrofitGsonConverter
+    compile dependencies.okhttp3
+    compile dependencies.okhttp3_ws
+    compile dependencies.okhttpLoggingInterceptor
+
 
 
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"

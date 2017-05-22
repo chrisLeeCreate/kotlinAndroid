@@ -13,6 +13,9 @@ class MainPresenter(var view: MainContract.View, var interator: MainIntrator) : 
                 .subscribe({
                     print(it.error)
                     print(it.results.toString())
+                    view.getDataSuccess(it.results[0])
+                }, {
+
                 })
     }
 
