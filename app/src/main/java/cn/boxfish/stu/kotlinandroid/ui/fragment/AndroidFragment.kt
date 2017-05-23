@@ -41,7 +41,6 @@ class AndroidFragment : Fragment(), KongfuContract.View {
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
                 if (!recyclerView?.canScrollVertically(1)!!) {
                     kongFuPresenter.getData(page++, ANDROID)
-
                 }
             }
 
@@ -51,6 +50,7 @@ class AndroidFragment : Fragment(), KongfuContract.View {
         })
         mAdapter.setOnItemClickListener({
             Toast.makeText(context, "发财", Toast.LENGTH_SHORT).show()
+            println()
         })
     }
 
