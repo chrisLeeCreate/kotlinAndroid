@@ -1,4 +1,4 @@
-package cn.boxfish.stu.kotlinandroid.adapter
+package cn.boxfish.stu.kotlinandroid.text
 
 import java.util.*
 

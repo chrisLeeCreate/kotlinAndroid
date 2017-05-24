@@ -1,4 +1,4 @@
-package cn.boxfish.stu.kotlinandroid.adapter
+package cn.boxfish.stu.kotlinandroid.text
 
 /**
  * Created by lishaowei on 2017/5/23.
