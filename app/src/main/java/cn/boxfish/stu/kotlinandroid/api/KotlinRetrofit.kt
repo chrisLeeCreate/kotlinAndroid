@@ -24,3 +24,17 @@ fun getInternetInstance(): Retrofit {
             .build()
 
 }
+
+fun getMusicInstance(): Retrofit {
+    val httpLoggingInterceptor = HttpLoggingInterceptor()
+    httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+    val client = OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build()
+
+    return Retrofit.Builder()
+            .client(client)
+            .baseUrl("http://s.music.163.com/")
+            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
+            .addCallAdapterFactory(RxJavaCallAdapterFactory.createWithScheduler(Schedulers.io()))
+            .build()
+
+}
