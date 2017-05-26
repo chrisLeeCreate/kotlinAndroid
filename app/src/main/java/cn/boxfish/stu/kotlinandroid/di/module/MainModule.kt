@@ -1,8 +1,8 @@
 package cn.boxfish.stu.kotlinandroid.di.module
 
-import cn.boxfish.stu.kotlinandroid.mvp.model.MainIntrator
-import cn.boxfish.stu.kotlinandroid.mvp.presenter.MainPresenter
-import cn.boxfish.stu.kotlinandroid.mvp.view.MainContract
+import cn.boxfish.stu.kotlinandroid.ui.mvp.model.MainIntrator
+import cn.boxfish.stu.kotlinandroid.ui.mvp.presenter.MainPresenter
+import cn.boxfish.stu.kotlinandroid.ui.mvp.view.MainContract
 import dagger.Module
 import dagger.Provides
 

@@ -1,6 +1,6 @@
-package cn.boxfish.stu.kotlinandroid.mvp.presenter
+package cn.boxfish.stu.kotlinandroid.ui.mvp.presenter
 
-import cn.boxfish.stu.kotlinandroid.mvp.view.MainContract
+import cn.boxfish.stu.kotlinandroid.ui.mvp.view.MainContract
 import rx.android.schedulers.AndroidSchedulers.mainThread
 
 /**

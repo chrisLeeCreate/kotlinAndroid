@@ -1,8 +1,9 @@
-package cn.boxfish.stu.kotlinandroid.mvp.model
+package cn.boxfish.stu.kotlinandroid.ui.mvp.model
 
 import cn.boxfish.stu.kotlinandroid.api.KotlinApi
 import cn.boxfish.stu.kotlinandroid.api.getInternetInstance
-import cn.boxfish.stu.kotlinandroid.mvp.view.MainContract
+import cn.boxfish.stu.kotlinandroid.mvp.model.JsonResult
+import cn.boxfish.stu.kotlinandroid.ui.mvp.view.MainContract
 import com.wingsofts.gankclient.bean.FuckGoods
 import rx.Observable
 

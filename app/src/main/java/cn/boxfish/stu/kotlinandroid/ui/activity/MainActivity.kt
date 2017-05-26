@@ -6,7 +6,7 @@ import android.util.Log
 import cn.boxfish.stu.kotlinandroid.R
 import cn.boxfish.stu.kotlinandroid.di.component.DaggerMainComponent
 import cn.boxfish.stu.kotlinandroid.di.module.MainModule
-import cn.boxfish.stu.kotlinandroid.mvp.view.MainContract
+import cn.boxfish.stu.kotlinandroid.ui.mvp.view.MainContract
 import cn.boxfish.stu.kotlinandroid.ui.fragment.AndroidFragment
 import cn.boxfish.stu.kotlinandroid.ui.fragment.IOSFragment
 import cn.boxfish.stu.kotlinandroid.ui.fragment.JavaFragment
