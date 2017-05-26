@@ -65,5 +65,8 @@ class AndroidAdapter(val Lists: ArrayList<FuckGoods>, var activity: FragmentActi
         mListener = listener
     }
 
+    fun getPositionData(pos: Int): FuckGoods {
+        return Lists[pos]
+    }
 
 }

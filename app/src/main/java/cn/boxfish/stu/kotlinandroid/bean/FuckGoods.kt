@@ -1,5 +1,7 @@
 package com.wingsofts.gankclient.bean
 
+import java.io.Serializable
+
 /**
  * Created by wing on 11/23/16.
  */
@@ -15,7 +17,7 @@ data class FuckGoods(
         val used: Boolean,
         val who: String
 
-) {
+) : Serializable {
     fun hasImg(): Boolean {
         return images != null
     }

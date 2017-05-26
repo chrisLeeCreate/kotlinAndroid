@@ -1,4 +1,4 @@
-package cn.boxfish.stu.kotlinandroid.ui.mvp.model
+package cn.boxfish.stu.kotlinandroid.ui.mvp.interactor
 
 import cn.boxfish.stu.kotlinandroid.api.KotlinApi
 import cn.boxfish.stu.kotlinandroid.api.getInternetInstance

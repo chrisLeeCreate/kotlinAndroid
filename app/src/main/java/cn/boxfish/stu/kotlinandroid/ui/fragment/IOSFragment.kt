@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import cn.boxfish.stu.kotlinandroid.R
 import cn.boxfish.stu.kotlinandroid.adapter.AndroidAdapter
-import cn.boxfish.stu.kotlinandroid.ui.mvp.model.KongfuIntrator
+import cn.boxfish.stu.kotlinandroid.ui.mvp.interactor.KongfuIntrator
 import cn.boxfish.stu.kotlinandroid.ui.mvp.presenter.KongFuPresenter
 import cn.boxfish.stu.kotlinandroid.ui.mvp.view.KongfuContract
 import com.wingsofts.gankclient.bean.FuckGoods

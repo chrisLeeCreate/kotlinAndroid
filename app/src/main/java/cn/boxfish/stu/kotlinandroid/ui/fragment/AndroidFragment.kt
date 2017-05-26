@@ -1,5 +1,6 @@
 package cn.boxfish.stu.kotlinandroid.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -11,7 +12,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import cn.boxfish.stu.kotlinandroid.R
 import cn.boxfish.stu.kotlinandroid.adapter.AndroidAdapter
-import cn.boxfish.stu.kotlinandroid.ui.mvp.model.KongfuIntrator
+import cn.boxfish.stu.kotlinandroid.ui.activity.WebViewActivity
+import cn.boxfish.stu.kotlinandroid.ui.mvp.interactor.KongfuIntrator
 import cn.boxfish.stu.kotlinandroid.ui.mvp.presenter.KongFuPresenter
 import cn.boxfish.stu.kotlinandroid.ui.mvp.view.KongfuContract
 import com.wingsofts.gankclient.bean.FuckGoods
@@ -49,8 +51,15 @@ class AndroidFragment : Fragment(), KongfuContract.View {
             }
         })
         mAdapter.setOnItemClickListener({
+            val fuckGoods = mAdapter.getPositionData(it)
+            println(fuckGoods.toString())
+            val bundle = Bundle()
+            var intent = Intent()
+            bundle.putSerializable("fuck", fuckGoods)
+            intent.putExtras(bundle)
+            intent.setClass(activity, WebViewActivity::class.java)
+            activity.startActivity(intent)
             Toast.makeText(context, "发财", Toast.LENGTH_SHORT).show()
-            println()
         })
     }
 
@@ -71,3 +80,4 @@ class AndroidFragment : Fragment(), KongfuContract.View {
         Log.d(ANDROID, results.toString())
     }
 }
+

@@ -1,7 +1,7 @@
 package cn.boxfish.stu.kotlinandroid.ui.mvp.presenter
 
 import android.util.Log
-import cn.boxfish.stu.kotlinandroid.ui.mvp.model.KongfuIntrator
+import cn.boxfish.stu.kotlinandroid.ui.mvp.interactor.KongfuIntrator
 import cn.boxfish.stu.kotlinandroid.ui.mvp.view.KongfuContract
 import rx.android.schedulers.AndroidSchedulers
 

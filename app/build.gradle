@@ -28,12 +28,9 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.0.0'
     def dependencies = rootProject.ext.dependencies
     compile dependencies.rxJava
     compile dependencies.rxAndroid
-    compile 'com.jakewharton.rxbinding:rxbinding-support-v4:0.4.0'
-    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
     compile('com.jakewharton.rxbinding:rxbinding-recyclerview-v7:0.4.0') {
         exclude module: 'com.android.support:recyclerview-v7'
     }
@@ -58,9 +55,12 @@ dependencies {
 
 
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.jakewharton.rxbinding:rxbinding-support-v4:0.4.0'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     testCompile 'junit:junit:4.12'
 }
-kapt{
+kapt {
     generateStubs = true
 }

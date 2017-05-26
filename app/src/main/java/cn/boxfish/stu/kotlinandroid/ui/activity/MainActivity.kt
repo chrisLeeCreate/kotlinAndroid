@@ -1,16 +1,17 @@
 package cn.boxfish.stu.kotlinandroid.ui.activity
 
+import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
 import android.util.Log
 import cn.boxfish.stu.kotlinandroid.R
 import cn.boxfish.stu.kotlinandroid.di.component.DaggerMainComponent
 import cn.boxfish.stu.kotlinandroid.di.module.MainModule
-import cn.boxfish.stu.kotlinandroid.ui.mvp.view.MainContract
 import cn.boxfish.stu.kotlinandroid.ui.fragment.AndroidFragment
 import cn.boxfish.stu.kotlinandroid.ui.fragment.IOSFragment
 import cn.boxfish.stu.kotlinandroid.ui.fragment.JavaFragment
 import cn.boxfish.stu.kotlinandroid.ui.fragment.KotlinFragment
+import cn.boxfish.stu.kotlinandroid.ui.mvp.view.MainContract
 import com.jakewharton.rxbinding.view.RxView.clicks
 import com.wingsofts.gankclient.bean.FuckGoods
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,7 +24,7 @@ class MainActivity : BaseActivity(), MainContract.View {
     lateinit var presenter: MainContract.Presenter
 
     lateinit var fragments: MutableList<Fragment>
-    override fun getArgs() {
+    override fun getArgs(bundle: Bundle?) {
 
     }
 

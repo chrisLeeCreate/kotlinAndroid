@@ -8,18 +8,17 @@ import android.support.v7.app.AppCompatActivity
  */
 abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-        getArgs()
+        getArgs(intent.extras)
         setContentView(setView())
-        initView()
         runOnUiThread { loadDaggerComponent() }
+        initView()
         setListener()
     }
 
     abstract fun loadDaggerComponent()
 
-    abstract fun getArgs()
+    abstract fun getArgs(bundle: Bundle?)
 
     abstract fun setListener()
 
