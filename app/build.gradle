@@ -50,10 +50,17 @@ dependencies {
     compile dependencies.okhttpLoggingInterceptor
     compile dependencies.supportDesign //BottomNavigationView
     compile dependencies.glide
+    //dagger
+    compile dependencies.dagger
+    kapt dependencies.daggerCompiler
+    provided dependencies.javaxAnnotation
 
 
 
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     testCompile 'junit:junit:4.12'
+}
+kapt{
+    generateStubs = true
 }

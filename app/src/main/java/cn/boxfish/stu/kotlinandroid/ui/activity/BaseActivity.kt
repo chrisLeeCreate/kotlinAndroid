@@ -13,8 +13,11 @@ abstract class BaseActivity : AppCompatActivity() {
         getArgs()
         setContentView(setView())
         initView()
+        runOnUiThread { loadDaggerComponent() }
         setListener()
     }
+
+    abstract fun loadDaggerComponent()
 
     abstract fun getArgs()
 
