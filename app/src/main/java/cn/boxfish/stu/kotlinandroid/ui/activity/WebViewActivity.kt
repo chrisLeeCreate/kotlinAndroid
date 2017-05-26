@@ -17,6 +17,7 @@ import javax.inject.Inject
 class WebViewActivity : BaseActivity(), WebViewContract.View {
     override fun getDataSuccess(it: ArrayList<Songs>) {
         println(it.toString())
+        mLists.clear()
         mLists.addAll(it)
         adapter.notifyDataSetChanged()
 
