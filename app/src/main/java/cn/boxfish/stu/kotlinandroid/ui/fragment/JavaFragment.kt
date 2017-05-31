@@ -16,7 +16,7 @@ import cn.boxfish.stu.kotlinandroid.ui.mvp.interactor.KongfuIntrator
 import cn.boxfish.stu.kotlinandroid.ui.mvp.presenter.KongFuPresenter
 import cn.boxfish.stu.kotlinandroid.ui.mvp.view.KongfuContract
 import com.wingsofts.gankclient.bean.FuckGoods
-
+import kotlinx.android.synthetic.main.frag_java.*
 
 
 /**
@@ -39,11 +39,10 @@ class JavaFragment : Fragment(), KongfuContract.View {
         kongFuPresenter.getData(1, JAVA)
 
         mAdapter = GirlAdapter(mLists, activity)
-        val recycle2 = view!!.findViewById(R.id.rv_girl) as RecyclerView
-        recycle2.adapter = mAdapter
-        recycle2.itemAnimator=DefaultItemAnimator()
-        recycle2.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        recycle2.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        rv_girl.adapter = mAdapter
+        rv_girl.itemAnimator=DefaultItemAnimator()
+        rv_girl.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        rv_girl.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
                 if (!recyclerView?.canScrollVertically(1)!!) {
                     kongFuPresenter.getData(page++, IOSFragment.IOS)

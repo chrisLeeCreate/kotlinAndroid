@@ -16,7 +16,7 @@ class Songs : Serializable {
     var page: String? = null
     var artists: List<ArtistsBean>? = null
 
-    class AlbumBean {
+    class AlbumBean : Serializable {
 
         var id: Int = 0
         var name: String? = null

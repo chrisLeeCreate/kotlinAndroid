@@ -10,6 +10,7 @@ import android.widget.TextView
 import cn.boxfish.stu.kotlinandroid.R
 import cn.boxfish.stu.kotlinandroid.bean.Songs
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.item_music.view.*
 
 /**
  * Created by lishaowei on 2017/5/26.
@@ -22,6 +23,9 @@ class MusicAdapter(var lists: MutableList<Songs>, var activity: Activity) : Recy
                 .load(lists[position].album?.picUrl)
                 .crossFade()
                 .into(holder?.musicBg)
+        holder?.itemView?.setOnClickListener {
+            listener?.invoke(it, position)
+        }
     }
 
     override fun getItemCount(): Int = lists.size
@@ -32,8 +36,19 @@ class MusicAdapter(var lists: MutableList<Songs>, var activity: Activity) : Recy
     }
 
     class ViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
-        var musicName: TextView? = view.findViewById(R.id.musicName) as TextView?
-        var albumName: TextView? = view.findViewById(R.id.albumName) as TextView?
-        var musicBg: ImageView? = view.findViewById(R.id.musicBg) as ImageView?
+        var musicName: TextView? = view.musicName
+        var albumName: TextView? = view.albumName
+        var musicBg: ImageView? = view.musicBg
+    }
+
+
+    fun setItemOnclick(listener: (View, pos: Int) -> Unit) {
+        this.listener = listener
+    }
+
+    private var listener: ((View, pos: Int) -> Unit)? = null
+
+    fun getPositionData(pos: Int): Songs {
+        return lists[pos]
     }
 }

@@ -1,5 +1,6 @@
 package cn.boxfish.stu.kotlinandroid.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import cn.boxfish.stu.kotlinandroid.R
@@ -11,6 +12,7 @@ import cn.boxfish.stu.kotlinandroid.ui.mvp.view.WebViewContract
 import com.jakewharton.rxbinding.widget.RxTextView
 import com.wingsofts.gankclient.bean.FuckGoods
 import kotlinx.android.synthetic.main.activity_web_view.*
+import kotlinx.android.synthetic.main.frag_android.*
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -48,13 +50,20 @@ class WebViewActivity : BaseActivity(), WebViewContract.View {
         RxTextView.textChangeEvents(editSearch).debounce(500, TimeUnit.MILLISECONDS).subscribe({
             presenter.getData(it.text().toString())
         })
+        adapter.setItemOnclick { view, pos ->
+            val bundle = Bundle()
+            var intent = Intent()
+            bundle.putSerializable("song", adapter.getPositionData(pos))
+            intent.putExtras(bundle)
+            intent.setClass(activity, MusicActivity::class.java)
+            activity.startActivity(intent)
+        }
     }
 
     override fun initView() {
         adapter = MusicAdapter(mLists, activity)
         recycle.adapter = adapter
         recycle.layoutManager = LinearLayoutManager(activity)
-
     }
 
     override fun setView() = R.layout.activity_web_view

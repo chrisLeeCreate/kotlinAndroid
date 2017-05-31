@@ -9,7 +9,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import cn.boxfish.stu.kotlinandroid.R
 import cn.boxfish.stu.kotlinandroid.adapter.AndroidAdapter
 import cn.boxfish.stu.kotlinandroid.ui.activity.WebViewActivity
@@ -17,6 +16,7 @@ import cn.boxfish.stu.kotlinandroid.ui.mvp.interactor.KongfuIntrator
 import cn.boxfish.stu.kotlinandroid.ui.mvp.presenter.KongFuPresenter
 import cn.boxfish.stu.kotlinandroid.ui.mvp.view.KongfuContract
 import com.wingsofts.gankclient.bean.FuckGoods
+import kotlinx.android.synthetic.main.frag_android.*
 
 /**
  * Created by lishaowei on 2017/5/22.
@@ -36,10 +36,9 @@ class AndroidFragment : Fragment(), KongfuContract.View {
         val kongFuPresenter = KongFuPresenter(this, KongfuIntrator())
         kongFuPresenter.getData(page++, ANDROID)
         mAdapter = AndroidAdapter(mLists, activity)
-        val recycle = view.findViewById(R.id.rv_recycle) as RecyclerView
-        recycle.adapter = mAdapter
-        recycle.layoutManager = LinearLayoutManager(context)
-        recycle.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        rv_recycle.adapter = mAdapter
+        rv_recycle.layoutManager = LinearLayoutManager(context)
+        rv_recycle.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
                 if (!recyclerView?.canScrollVertically(1)!!) {
                     kongFuPresenter.getData(page++, ANDROID)
@@ -59,7 +58,6 @@ class AndroidFragment : Fragment(), KongfuContract.View {
             intent.putExtras(bundle)
             intent.setClass(activity, WebViewActivity::class.java)
             activity.startActivity(intent)
-            Toast.makeText(context, "发财", Toast.LENGTH_SHORT).show()
         })
     }
 
