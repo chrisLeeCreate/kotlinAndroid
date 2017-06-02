@@ -9,7 +9,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import cn.boxfish.stu.kotlinandroid.R
 import cn.boxfish.stu.kotlinandroid.adapter.GirlAdapter
 import cn.boxfish.stu.kotlinandroid.ui.mvp.interactor.KongfuIntrator
@@ -40,7 +39,7 @@ class JavaFragment : Fragment(), KongfuContract.View {
         mAdapter = GirlAdapter(mLists, activity)
         val rv_girl = view?.findViewById(R.id.rv_girl) as RecyclerView
         rv_girl.adapter = mAdapter
-        rv_girl.itemAnimator=DefaultItemAnimator()
+        rv_girl.itemAnimator = DefaultItemAnimator()
         rv_girl.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         rv_girl.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
@@ -54,7 +53,7 @@ class JavaFragment : Fragment(), KongfuContract.View {
             }
         })
         mAdapter.setOnItemClickListener({
-            Toast.makeText(context, "发财", Toast.LENGTH_SHORT).show()
+
         })
     }
 

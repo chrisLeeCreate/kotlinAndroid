@@ -12,7 +12,6 @@ import cn.boxfish.stu.kotlinandroid.ui.mvp.view.WebViewContract
 import com.jakewharton.rxbinding.widget.RxTextView
 import com.wingsofts.gankclient.bean.FuckGoods
 import kotlinx.android.synthetic.main.activity_web_view.*
-import kotlinx.android.synthetic.main.frag_android.*
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -61,6 +60,7 @@ class WebViewActivity : BaseActivity(), WebViewContract.View {
     }
 
     override fun initView() {
+        toast("你再干嘛啊 兄弟")
         adapter = MusicAdapter(mLists, activity)
         recycle.adapter = adapter
         recycle.layoutManager = LinearLayoutManager(activity)
