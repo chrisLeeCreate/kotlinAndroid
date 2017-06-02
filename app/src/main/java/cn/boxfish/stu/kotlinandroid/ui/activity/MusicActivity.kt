@@ -4,11 +4,21 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import cn.boxfish.stu.kotlinandroid.R
 import cn.boxfish.stu.kotlinandroid.bean.Songs
+import cn.boxfish.stu.kotlinandroid.di.component.DaggerMusicComponent
+import cn.boxfish.stu.kotlinandroid.di.module.MusicModule
+import cn.boxfish.stu.kotlinandroid.ui.mvp.view.MusicContract
 import com.jakewharton.rxbinding.view.RxView
 import kotlinx.android.synthetic.main.activity_music_.*
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
 
-class MusicActivity : BaseActivity() {
+class MusicActivity : BaseActivity(), MusicContract.View {
+    override fun getDataSucc() {
+        println("getData" + "MusicActivity")
+    }
+
+    @Inject
+    lateinit var presenter: MusicContract.Presenter
     private var mediaPlayer: MediaPlayer? = null
     private var songs: Songs? = null
 
@@ -30,6 +40,8 @@ class MusicActivity : BaseActivity() {
     }
 
     override fun initView() {
+        println("getData" + "initView")
+        presenter.getData()
         println("songs" + songs.toString())
         mediaPlayer = MediaPlayer()
         mediaPlayer?.setDataSource(songs?.audio)
@@ -41,6 +53,8 @@ class MusicActivity : BaseActivity() {
 
 
     override fun loadDaggerComponent() {
+        DaggerMusicComponent.builder()
+                .musicModule(MusicModule(this)).build().inject(this)
     }
 
 }

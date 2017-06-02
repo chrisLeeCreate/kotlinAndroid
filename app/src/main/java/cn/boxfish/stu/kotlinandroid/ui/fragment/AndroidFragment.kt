@@ -16,7 +16,6 @@ import cn.boxfish.stu.kotlinandroid.ui.mvp.interactor.KongfuIntrator
 import cn.boxfish.stu.kotlinandroid.ui.mvp.presenter.KongFuPresenter
 import cn.boxfish.stu.kotlinandroid.ui.mvp.view.KongfuContract
 import com.wingsofts.gankclient.bean.FuckGoods
-import kotlinx.android.synthetic.main.frag_android.*
 
 /**
  * Created by lishaowei on 2017/5/22.
@@ -36,9 +35,10 @@ class AndroidFragment : Fragment(), KongfuContract.View {
         val kongFuPresenter = KongFuPresenter(this, KongfuIntrator())
         kongFuPresenter.getData(page++, ANDROID)
         mAdapter = AndroidAdapter(mLists, activity)
-        rv_recycle.adapter = mAdapter
-        rv_recycle.layoutManager = LinearLayoutManager(context)
-        rv_recycle.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        val recyclerView = view.findViewById(R.id.rv_recycle) as RecyclerView
+        recyclerView.adapter = mAdapter
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
                 if (!recyclerView?.canScrollVertically(1)!!) {
                     kongFuPresenter.getData(page++, ANDROID)

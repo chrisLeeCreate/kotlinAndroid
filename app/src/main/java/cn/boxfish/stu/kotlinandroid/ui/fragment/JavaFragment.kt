@@ -16,7 +16,6 @@ import cn.boxfish.stu.kotlinandroid.ui.mvp.interactor.KongfuIntrator
 import cn.boxfish.stu.kotlinandroid.ui.mvp.presenter.KongFuPresenter
 import cn.boxfish.stu.kotlinandroid.ui.mvp.view.KongfuContract
 import com.wingsofts.gankclient.bean.FuckGoods
-import kotlinx.android.synthetic.main.frag_java.*
 
 
 /**
@@ -39,6 +38,7 @@ class JavaFragment : Fragment(), KongfuContract.View {
         kongFuPresenter.getData(1, JAVA)
 
         mAdapter = GirlAdapter(mLists, activity)
+        val rv_girl = view?.findViewById(R.id.rv_girl) as RecyclerView
         rv_girl.adapter = mAdapter
         rv_girl.itemAnimator=DefaultItemAnimator()
         rv_girl.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)

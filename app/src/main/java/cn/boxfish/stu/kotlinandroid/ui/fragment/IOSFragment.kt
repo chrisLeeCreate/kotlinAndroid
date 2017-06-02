@@ -15,7 +15,6 @@ import cn.boxfish.stu.kotlinandroid.ui.mvp.interactor.KongfuIntrator
 import cn.boxfish.stu.kotlinandroid.ui.mvp.presenter.KongFuPresenter
 import cn.boxfish.stu.kotlinandroid.ui.mvp.view.KongfuContract
 import com.wingsofts.gankclient.bean.FuckGoods
-import kotlinx.android.synthetic.main.frag_ios.*
 
 /**
  * Created by lishaowei on 2017/5/22.
@@ -34,6 +33,7 @@ class IOSFragment : Fragment(), KongfuContract.View {
         val kongFuPresenter = KongFuPresenter(this, KongfuIntrator())
         kongFuPresenter.getData(1, IOS)
         mAdapter = AndroidAdapter(mLists, activity)
+        val rv_recycle2 = view?.findViewById(R.id.rv_recycle2) as RecyclerView
         rv_recycle2.adapter = mAdapter
         rv_recycle2.layoutManager = LinearLayoutManager(context)
         rv_recycle2.addOnScrollListener(object : RecyclerView.OnScrollListener() {
