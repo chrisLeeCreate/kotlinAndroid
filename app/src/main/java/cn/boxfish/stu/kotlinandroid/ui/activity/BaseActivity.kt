@@ -6,6 +6,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
+import com.tbruyelle.rxpermissions.RxPermissions
+import rx.Observable
 
 /**
  * Created by lishaowei on 2017/5/19.
@@ -57,5 +59,10 @@ abstract class BaseActivity : AppCompatActivity() {
         startActivity(intent)
         if (isFinished)
             finish()
+    }
+
+    fun requestPermission(vararg permission: String): Observable<Boolean>? {
+        val rxPermissions = RxPermissions(this)
+        return rxPermissions.request(*permission)
     }
 }

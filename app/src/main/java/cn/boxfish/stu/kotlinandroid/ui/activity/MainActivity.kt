@@ -1,5 +1,6 @@
 package cn.boxfish.stu.kotlinandroid.ui.activity
 
+import android.Manifest
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
@@ -7,15 +8,16 @@ import android.util.Log
 import cn.boxfish.stu.kotlinandroid.R
 import cn.boxfish.stu.kotlinandroid.di.component.DaggerMainComponent
 import cn.boxfish.stu.kotlinandroid.di.module.MainModule
+import cn.boxfish.stu.kotlinandroid.extensions.register
 import cn.boxfish.stu.kotlinandroid.ui.fragment.AndroidFragment
 import cn.boxfish.stu.kotlinandroid.ui.fragment.IOSFragment
 import cn.boxfish.stu.kotlinandroid.ui.fragment.JavaFragment
 import cn.boxfish.stu.kotlinandroid.ui.fragment.KotlinFragment
 import cn.boxfish.stu.kotlinandroid.ui.mvp.view.MainContract
-import com.jakewharton.rxbinding.view.RxView.clicks
+import com.jakewharton.rxbinding.view.RxView
+import com.tbruyelle.rxpermissions.RxPermissions
 import com.wingsofts.gankclient.bean.FuckGoods
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 class MainActivity : BaseActivity(), MainContract.View {
@@ -34,6 +36,12 @@ class MainActivity : BaseActivity(), MainContract.View {
     }
 
     override fun initView() {
+        requestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
+                ?.register({
+                    Log.e("permission2", "我有权限")
+                    toast("我有权限")
+                })
+
         initFragment()
         vp_fragments.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
             override fun getCount() = fragments.size
@@ -62,11 +70,27 @@ class MainActivity : BaseActivity(), MainContract.View {
     }
 
     override fun setListener() {
-        clicks(navigationView).throttleFirst(1000, TimeUnit.MILLISECONDS).subscribe({
-            //            val mainPresenter = MainPresenter(this, MainIntrator())
-//            mainPresenter.getData("1")
-            presenter.getData("1")
-        })
+//        clicks(floatingActionButton).throttleFirst(1000, TimeUnit.MILLISECONDS).subscribe({
+//            requestPermission(Manifest.permission.CAMERA)?.subscribe { granted ->
+//                if (granted) {
+//                    Log.e("permission2", "我有权限，你要我怎样")
+//                } else {
+//                    Log.e("permission2", "我没有权限")
+//                }
+//            }
+//        })
+
+        RxView.clicks(floatingActionButton)
+                .compose(RxPermissions(this).ensure(Manifest.permission.CAMERA))
+                .subscribe({ granted ->
+                    if (granted) {
+                        Log.e("permission2", "我有权限，你要我怎样")
+
+                    } else {
+                        Log.e("permission2", "我没有权限")
+                    }
+                })
+
     }
 
     override fun getDataSuccess(goods: FuckGoods) {
