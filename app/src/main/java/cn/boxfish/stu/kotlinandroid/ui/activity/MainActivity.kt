@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
 import android.util.Log
+import cn.boxfish.stu.kotlinandroid.BuildConfig
 import cn.boxfish.stu.kotlinandroid.R
 import cn.boxfish.stu.kotlinandroid.di.component.DaggerMainComponent
 import cn.boxfish.stu.kotlinandroid.di.module.MainModule
@@ -39,7 +40,9 @@ class MainActivity : BaseActivity(), MainContract.View {
         requestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
                 ?.register({
                     Log.e("permission2", "我有权限")
-                    toast("我有权限")
+                    if (BuildConfig.PrintLog) {
+                        toast("我有权限")
+                    }
                 })
 
         initFragment()
