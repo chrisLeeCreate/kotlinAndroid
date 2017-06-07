@@ -37,14 +37,15 @@ class MainActivity : BaseActivity(), MainContract.View {
     }
 
     override fun initView() {
-        requestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
-                ?.register({
-                    Log.e("permission2", "我有权限")
-                    if (BuildConfig.PrintLog) {
-                        toast("我有权限")
-                    }
-                })
-
+        if (!BuildConfig.Debug) {
+            requestPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE)
+                    ?.register({
+                        Log.e("permission2", "我有权限")
+                        if (BuildConfig.PrintLog) {
+                            toast("我有权限")
+                        }
+                    })
+        }
         initFragment()
         vp_fragments.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
             override fun getCount() = fragments.size

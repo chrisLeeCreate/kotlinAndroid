@@ -2,34 +2,37 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.3'
+    compileSdkVersion COMPILESDKVERSION as Integer
+    buildToolsVersion BUILDTOOLSVERSION as String
     signingConfigs {
         release {
             keyAlias 'lishaowei1'
             keyPassword 'lishaowei'
             storeFile file('/Users/lishaowei/lishaoweisign/lishaowei.jks')
             storePassword 'lishaowei'
+            v2SigningEnabled false
         }
     }
     defaultConfig {
         applicationId "cn.boxfish.stu.kotlinandroid"
-        minSdkVersion 19
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion MINSDKVERSION as Integer
+        targetSdkVersion TARGETSDKVERSION as Integer
+        versionCode VERSIONCODE as Integer
+        versionName VERSIONNAME as String
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
             buildConfigField "boolean", "PrintLog", "true"
+            buildConfigField "boolean", "Debug", "false"
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
         debug {
             minifyEnabled false
             buildConfigField("boolean", "PrintLog", "true")
+            buildConfigField "boolean", "Debug", "true"
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
