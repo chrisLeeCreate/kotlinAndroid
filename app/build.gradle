@@ -4,6 +4,14 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 25
     buildToolsVersion '25.0.3'
+    signingConfigs {
+        release {
+            keyAlias 'lishaowei1'
+            keyPassword 'lishaowei'
+            storeFile file('/Users/lishaowei/lishaoweisign/lishaowei.jks')
+            storePassword 'lishaowei'
+        }
+    }
     defaultConfig {
         applicationId "cn.boxfish.stu.kotlinandroid"
         minSdkVersion 19
@@ -17,6 +25,7 @@ android {
             minifyEnabled false
             buildConfigField "boolean", "PrintLog", "true"
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
         debug {
             minifyEnabled false
