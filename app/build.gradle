@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'packer'
 android {
     compileSdkVersion COMPILESDKVERSION as Integer
     buildToolsVersion BUILDTOOLSVERSION as String
@@ -79,6 +80,8 @@ dependencies {
     compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     testCompile 'junit:junit:4.12'
+    compile 'com.mcxiaoke.gradle:packer-helper:1.0.9'
+
 }
 kapt {
     generateStubs = true
