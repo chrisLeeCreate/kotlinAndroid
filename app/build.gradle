@@ -81,6 +81,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     testCompile 'junit:junit:4.12'
     compile 'com.mcxiaoke.gradle:packer-helper:1.0.9'
+    compile 'com.tencent.wcdb:wcdb-android:1.0.0'
 
 }
 kapt {
