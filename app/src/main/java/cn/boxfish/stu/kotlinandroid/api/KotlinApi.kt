@@ -3,10 +3,10 @@ package cn.boxfish.stu.kotlinandroid.api
 import cn.boxfish.stu.kotlinandroid.bean.JsonResul
 import cn.boxfish.stu.kotlinandroid.mvp.model.JsonResult
 import com.wingsofts.gankclient.bean.FuckGoods
+import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
-import rx.Observable
 
 /**
  * Created by lishaowei on 2017/5/19.

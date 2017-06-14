@@ -2,7 +2,7 @@ package cn.boxfish.stu.kotlinandroid.ui.mvp.view
 
 import cn.boxfish.stu.kotlinandroid.bean.JsonResul
 import cn.boxfish.stu.kotlinandroid.bean.Songs
-import rx.Observable
+import io.reactivex.Observable
 
 /**
  * Created by lishaowei on 2017/5/26.

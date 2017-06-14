@@ -8,7 +8,7 @@ import cn.boxfish.stu.kotlinandroid.ui.fragment.IOSFragment.Companion.IOS
 import cn.boxfish.stu.kotlinandroid.ui.fragment.JavaFragment.Companion.JAVA
 import cn.boxfish.stu.kotlinandroid.ui.mvp.view.KongfuContract
 import com.wingsofts.gankclient.bean.FuckGoods
-import rx.Observable
+import io.reactivex.Observable
 
 /**
  * Created by lishaowei on 2017/5/22.

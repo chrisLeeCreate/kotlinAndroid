@@ -4,7 +4,7 @@ import cn.boxfish.stu.kotlinandroid.api.KotlinApi
 import cn.boxfish.stu.kotlinandroid.api.getMusicInstance
 import cn.boxfish.stu.kotlinandroid.bean.JsonResul
 import cn.boxfish.stu.kotlinandroid.ui.mvp.view.WebViewContract
-import rx.Observable
+import io.reactivex.Observable
 
 /**
  * Created by lishaowei on 2017/5/26.

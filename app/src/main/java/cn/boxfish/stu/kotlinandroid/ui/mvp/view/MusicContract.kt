@@ -10,6 +10,7 @@ interface MusicContract {
 
     interface Presenter {
         fun getData()
+        fun kotlin()
     }
 
     interface Interactor {

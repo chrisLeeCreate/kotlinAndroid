@@ -9,7 +9,7 @@ import cn.boxfish.stu.kotlinandroid.bean.Songs
 import cn.boxfish.stu.kotlinandroid.di.component.DaggerWebviewComponent
 import cn.boxfish.stu.kotlinandroid.di.module.WebViewModule
 import cn.boxfish.stu.kotlinandroid.ui.mvp.view.WebViewContract
-import com.jakewharton.rxbinding.widget.RxTextView
+import com.jakewharton.rxbinding2.widget.RxTextView
 import com.wingsofts.gankclient.bean.FuckGoods
 import kotlinx.android.synthetic.main.activity_web_view.*
 import java.util.concurrent.TimeUnit

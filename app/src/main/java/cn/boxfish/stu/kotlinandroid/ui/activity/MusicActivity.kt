@@ -7,7 +7,7 @@ import cn.boxfish.stu.kotlinandroid.bean.Songs
 import cn.boxfish.stu.kotlinandroid.di.component.DaggerMusicComponent
 import cn.boxfish.stu.kotlinandroid.di.module.MusicModule
 import cn.boxfish.stu.kotlinandroid.ui.mvp.view.MusicContract
-import com.jakewharton.rxbinding.view.RxView
+import com.jakewharton.rxbinding2.view.RxView
 import kotlinx.android.synthetic.main.activity_music_.*
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject

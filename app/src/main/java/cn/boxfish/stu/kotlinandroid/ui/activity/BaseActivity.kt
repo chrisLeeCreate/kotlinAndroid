@@ -6,8 +6,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import com.tbruyelle.rxpermissions.RxPermissions
-import rx.Observable
+import com.tbruyelle.rxpermissions2.RxPermissions
+import io.reactivex.Observable
 
 /**
  * Created by lishaowei on 2017/5/19.

@@ -1,7 +1,7 @@
 package cn.boxfish.stu.kotlinandroid.extensions
 
 import android.util.Log
-import rx.Observable
+import io.reactivex.Observable
 
 /**
  * Created by lishaowei on 2017/6/2.
