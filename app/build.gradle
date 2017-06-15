@@ -35,6 +35,8 @@ android {
             buildConfigField("boolean", "PrintLog", "true")
             buildConfigField "boolean", "Debug", "true"
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            versionNameSuffix " - " + System.getProperty("user.name")
+
         }
     }
     sourceSets {
