@@ -2,9 +2,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'packer'
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion COMPILESDKVERSION as Integer
-    buildToolsVersion BUILDTOOLSVERSION as String
     signingConfigs {
         release {
             keyAlias 'lishaowei1'
@@ -70,8 +70,8 @@ dependencies {
     compile dependencies.RxBinding2Supportv4
     compile dependencies.RxBinding2RecyclerviewV7
 
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //noinspection GradleCompatible
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     testCompile 'junit:junit:4.12'
     compile 'com.mcxiaoke.gradle:packer-helper:1.0.9'
