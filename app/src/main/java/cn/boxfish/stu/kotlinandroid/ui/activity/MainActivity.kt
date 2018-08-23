@@ -15,8 +15,6 @@ import cn.boxfish.stu.kotlinandroid.ui.fragment.IOSFragment
 import cn.boxfish.stu.kotlinandroid.ui.fragment.JavaFragment
 import cn.boxfish.stu.kotlinandroid.ui.fragment.KotlinFragment
 import cn.boxfish.stu.kotlinandroid.ui.mvp.view.MainContract
-import com.jakewharton.rxbinding2.view.RxView.clicks
-import com.tbruyelle.rxpermissions2.RxPermissions
 import com.wingsofts.gankclient.bean.FuckGoods
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
@@ -84,16 +82,16 @@ class MainActivity : BaseActivity(), MainContract.View {
 //            }
 //        })
 
-        clicks(floatingActionButton)
-                .compose(RxPermissions(this).ensure(Manifest.permission.CAMERA))
-                .subscribe({ granted ->
-                    if (granted) {
-                        Log.e("permission2", "我有权限，你要我怎样")
-
-                    } else {
-                        Log.e("permission2", "我没有权限")
-                    }
-                })
+//        clicks(floatingActionButton)
+//                .compose(RxPermissions(this).ensure(Manifest.permission.CAMERA))
+//                .subscribe({ granted ->
+//                    if (granted) {
+//                        Log.e("permission2", "我有权限，你要我怎样")
+//
+//                    } else {
+//                        Log.e("permission2", "我没有权限")
+//                    }
+//                })
 
     }
 
